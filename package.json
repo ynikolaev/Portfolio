@@ -1,0 +1,10 @@
+{
+  "name": "web-portfolio",
+  "version": "1.0.1",
+  "description": "Portfolio website project",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Yan Nikolaev"
+}

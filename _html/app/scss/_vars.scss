@@ -1,0 +1,31 @@
+//Fonts
+$default-font: "raleway", sans-serif;
+$fa-font-path: "../fonts/webfonts";
+
+// Colours
+$accent: #ea4c41;
+$darkgrey: #333;
+$dimgrey:#696969;
+$text: #333;
+$black: #000;
+$blue: #66C7CD;
+$logocolour: #dedede;
+$white: #fff;
+$grey: #a1a1a1;
+$blue-faded: #03659A;
+$purple: #9B4DCA;
+$darkboard: #4e2977;
+$lightpurple: #b5a7c7;
+$green: #228B22;
+$borderColor: rgba( #000, 0.3 );
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+
+$gutter: $grid-gutter-width;
+
+//MM_MENU
+$mm_backgroundColor: $blue;

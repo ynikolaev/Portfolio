@@ -1,0 +1,336 @@
+@import "../vars";
+@import "../fonts";
+
+body {
+  &.ishome {
+    .site-header {
+      min-height: 600px;
+      height: 100vh;
+      color: $black;
+      background-position: right;
+      .top-line {
+        padding-top: 20px;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.logo {
+  img {
+    width: 123px;
+    height: auto;
+    margin-left: 45px;
+  }
+}
+
+.email {
+  position: absolute;
+  right: 95px;
+  top: 44px;
+  font-family: firasans, sans-serif;
+  font-size: 20px;
+  white-space: nowrap;
+  .far {
+    color: $accent;
+    margin-right: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+
+//MENU ICON
+.hamburger {
+  right: 5px;
+  position: absolute;
+  top: 34px;
+  .hamburger-box {
+    width: 34px;
+    .hamburger-inner,
+    .hamburger-inner::after,
+    .hamburger-inner::before {
+      border-radius: 0;
+      width: 34px;
+      height: 4px;
+      background-color: $black;
+    }
+  }
+}
+
+//MENU BODY
+.mm-panels {
+  .mm-panel {
+    &:before {
+      height: 0;
+    }
+    .mm-navbar+.mm-listview {
+      margin-top: 0;
+    }
+  }
+  .mm-panel_has-navbar {
+    padding-top: 20px;
+  }
+  .mm-navbar {
+    border: none;
+    position: relative;
+    height: auto; //LOGO
+    .mm-navbar__title {
+      img {
+        width: 128px;
+        height: auto;
+        margin: 10px;
+      }
+      p {
+        font-weight: bold;
+        user-select: none;
+        color: $logocolour;
+        font-weight: 300;
+      }
+    }
+  } //ITEMS
+  .mm-listview {
+    >li {
+			text-transform: uppercase;
+      >a {
+        color: $grey;
+        font-weight: bold;
+        transition: color .25s ease;
+        padding: {
+          left: 14%;
+          right: 14%;
+          top: 15px;
+        }
+        &:hover {
+          color: $accent;
+          &::before {
+            color: $accent;
+          }
+        }
+        &::before {
+          content: "\f1ce";
+          font-family: 'Font Awesome 5 Free';
+          margin-right: 8px;
+          text-decoration: none;
+          font-size: 17px;
+          color: $white;
+          transition: color .25s ease;
+        }
+      }
+      &.active>a {
+        color: $accent;
+      }
+      &:before {
+        border: none;
+      }
+      &:after {
+        border: none;
+      }
+    }
+  }
+}
+
+//MENU FOOTER
+.mm-navbars_bottom>.mm-navbar {
+  margin: 5px;
+  >a {
+    color: $logocolour;
+    font-size: 30px;
+    padding: 10px;
+  }
+  .icon-email {
+    &:hover {
+      color: $accent;
+      transition: color .25s ease;
+    }
+  }
+  .icon-linkedin {
+    &:hover {
+      color: $blue-faded;
+      transition: color .25s ease;
+    }
+  }
+  .icon-github {
+    &:hover {
+      color: $purple;
+      transition: color .25s ease;
+    }
+  }
+}
+
+section,
+header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+section {
+  background-color: #fff;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  &.img-width {
+    width: 100%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+//MAIN TEXT SLOT
+.header-flex {
+  display: flex;
+  position: relative;
+  height: 100%;
+  top: 0;
+}
+
+.flex-center {
+  margin: auto; //margin auto to put content in center using flex
+}
+
+.header-composition {
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 25px 0;
+  border-radius: 5px;
+  color: $logocolour;
+  margin-top: 40px;
+  p {
+    font-size: 16px;
+    margin-top: 40px;
+  }
+  .button {
+    margin-top: 10px;
+  }
+}
+
+.header-greeting {
+  p {
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center; //do not let text to be wrapped
+    white-space: nowrap;
+    margin: 0;
+    span {
+      margin: 0 10px;
+    } //line through before and after
+    &::before,
+    &::after {
+      //block elements in before and after requires content parameter
+      content: '';
+      height: 1px;
+      width: 100%;
+      position: relative;
+      background-color: $logocolour;
+      display: inline-block;
+    }
+  }
+  .h1 {
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 1.6;
+    margin: 0;
+    border-bottom: 1px solid $logocolour;
+    white-space: nowrap;
+  }
+  strong {
+    //strong is in-line element, not block
+    display: block;
+    font-size: 17px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 22px;
+    .fas {
+      color: $accent;
+      opacity: 0.9;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: inherit;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+//HEADER WITH SOCIAL ICONS
+.header-social {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 0 18px;
+}
+
+.social-icons {
+  margin: auto; //vertically centered
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    color: $logocolour;
+    font-size: 17px;
+    display: block;
+    background-color: rgba($black, .7);
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    margin: 18px 0;
+    line-height: 38px; //centrilize icons with the same lh as height and width
+    border-radius: 10em;
+    transition: background-color .25s ease;
+    z-index: 0;
+  }
+  .icon-email {
+    &:hover {
+      background-color: rgba($accent, .8);
+    }
+  }
+  .icon-linkedin {
+    &:hover {
+      background-color: rgba($blue-faded, .8);
+    }
+  }
+  .icon-github {
+    &:hover {
+      background-color: rgba($purple, .8);
+    }
+  }
+}
+
+//HEADER CONTACT
+.header-contacts {
+  position: absolute; //goes off from viewport, thats why position absolute
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: $logocolour;
+  text-align: center;
+  padding: 12.5px;
+  background-color: rgba($black, .20);
+  font-size: 12px;
+  user-select: none;
+  .fas {
+    margin-right: 5px;
+    font-size: 12px;
+  }
+}
+

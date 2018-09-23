@@ -1,0 +1,187 @@
+@import "../vars";
+@import "../fonts";
+$colors: $darkgrey,
+$darkgrey,
+$darkgrey;
+@for $i from 1 through length($colors) {
+  //position of element
+  .carousel-project .owl-item:nth-child(#{(length($colors))}n+#{$i}) {
+    background-color: nth($colors, $i);
+  }
+}
+
+.carousel-project-item {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.carousel-project {
+  background-color: #151515;
+  .owl-item {
+    height: 100vh;
+    position: relative;
+    &:hover {
+      .carousel-project-image {
+        opacity: 1;
+			}
+			.button {
+				opacity: 1;
+			}
+    }
+    .carousel-project-image {
+      opacity: .5;
+      transition: opacity .5s ease;
+      background-size: cover;
+      background-position: center;
+      transform: scaleX(-1);
+    }
+    &:nth-child(2n+1) {
+      .carousel-project-item {
+        flex-direction: column;
+        .carousel-project-image {
+          transform: scaleX(1);
+        }
+      }
+    }
+    .carousel-logo {
+      text-align: center;
+      img {
+        display: inline-block;
+        width: 100px;
+        height: auto;
+      }
+    }
+  }
+  .owl-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    >button {
+      width: 63.5px;
+      height: 63.5px;
+			position: absolute;
+			border-radius: 10em;
+			margin: 10px;
+      &.owl-prev {
+        text-align: center;
+        color: $logocolour;
+        background-color: rgba($black, 0.3);
+        font-size: 36px;
+        line-height: 64px;
+        left: 0;
+        &:focus {
+          outline: none;
+				}
+				&.disabled {
+					display: none;
+				}
+      }
+      &.owl-next {
+        text-align: center;
+        color: $logocolour;
+        background-color: rgba($black, 0.3);
+        font-size: 36px;
+        line-height: 64px;
+        right: 0;
+        &:focus {
+          outline: none;
+				}
+				&.disabled {
+					display: none;
+				}
+      }
+      &:active {
+        background-color: rgba($black, 0.9);
+			}
+			&:hover {
+        background-color: rgba($accent, 0.9);
+        transition: background-color 0.5s ease;
+      }
+    }
+  }
+  .owl-dots {
+    display: none;
+  }
+}
+
+.carousel-project-content {
+  position: relative;
+  padding: 20px 10% 20px;
+  display: flex;
+}
+
+.carousel-project-composition {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 28px;
+    margin-top: 5px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    span {
+      font-weight: normal;
+      font-size: 18px;
+      display: block;
+      font-weight: 300;
+      color: $accent;
+    }
+	}
+	.button {
+		opacity: 0.5;
+		transition: opacity .5s ease;
+	}
+}
+
+.owl-carousel .owl-nav.disabled {
+  display: block;
+}
+
+.owl-carousel {
+  .owl-item {
+    backface-visibility: inherit;
+  }
+}
+
+.carousel-project-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 25px;
+  li {
+    border-bottom: 1px solid rgba($logocolour, .8);
+    padding: 10px;
+    &:last-child {
+      border-bottom: none;
+    }
+    strong {
+      font-family: firasans;
+      color: #4a4a4a;
+    }
+    .fa {
+      font-size: 14px;
+    }
+  }
+}
+
+.section-overlay {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3d3c3c;
+    opacity: .92;
+  }
+  >* {
+    position: relative;
+  }
+}

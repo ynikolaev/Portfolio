@@ -4,6 +4,12 @@
 // max-width≥1200px
 @include media-breakpoint-down(lg) {
   //HEADER
+  .logo {
+    img {
+      width: 110px;
+      margin-left: 40px;
+    }
+  }
   .header-composition {
     margin-top: 40px;
     .button {
@@ -32,7 +38,9 @@
       flex-direction: column;
       .carousel-project-image {
         opacity: 1;
-        transform: scaleX(1);
+        img {
+          margin: 0;
+        }
       }
     }
   }
@@ -48,12 +56,12 @@
         }
       }
     }
-	}
-	.carousel-project-composition {
-		.button {
-			opacity: 1;
-		}
-	}
+  }
+  .carousel-project-composition {
+    .button {
+      opacity: 1;
+    }
+  } //CAROUSEL ENDS
 }
 
 // max-width≥992px
@@ -61,7 +69,7 @@
   //HEADER
   .logo img {
     width: 100px;
-    height: auto;
+    margin-left: 35px;
   }
   .email {
     font-size: 18px;
@@ -87,32 +95,31 @@
       font-size: 14px;
     }
   } //HEADER ENDS
+  //CAROUSEL
+  &:nth-child(2n+1) {
+    .carousel-project-item {
+      padding-top: 50px;
+      flex-direction: column;
+      .carousel-project-image {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+  }
 }
 
 // max-width≥768px
 @include media-breakpoint-down(sm) {
   //HEADER
   .header-social {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    padding: 0 14px;
+    visibility: hidden;
+	}
+	.header-mob-social {
+    visibility: visible;
   }
   .site-header {
     background-position: right;
     background-repeat: no-repeat;
-  }
-  .social-icons {
-    margin-top: 120px;
-    ul {
-      display: inline-flex;
-    }
-    a {
-      margin: 0 18px;
-    }
   }
   .header-greeting {
     .h1 {
@@ -186,6 +193,12 @@
       margin: 0 18px;
     }
   } //HEADER ENDS
+  //CAROUSEL 
+  &:nth-child(2n+1) {
+    .carousel-project-item {
+      padding-top: 20px;
+    }
+  }
 }
 
 /*==========  Mobile First  ==========*/

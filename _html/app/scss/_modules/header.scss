@@ -1,6 +1,5 @@
 @import "../vars";
 @import "../fonts";
-
 body {
   &.ishome {
     .site-header {
@@ -93,7 +92,7 @@ body {
   } //ITEMS
   .mm-listview {
     >li {
-			text-transform: uppercase;
+      text-transform: uppercase;
       >a {
         color: $grey;
         font-weight: bold;
@@ -134,30 +133,9 @@ body {
 
 //MENU FOOTER
 .mm-navbars_bottom>.mm-navbar {
-  margin: 5px;
-  >a {
-    color: $logocolour;
-    font-size: 30px;
-    padding: 10px;
-  }
-  .icon-email {
-    &:hover {
-      color: $accent;
-      transition: color .25s ease;
-    }
-  }
-  .icon-linkedin {
-    &:hover {
-      color: $blue-faded;
-      transition: color .25s ease;
-    }
-  }
-  .icon-github {
-    &:hover {
-      color: $purple;
-      transition: color .25s ease;
-    }
-  }
+	margin: 5px;
+	font-family: firasans, sans-serif;
+	color: $logocolour;
 }
 
 section,
@@ -268,6 +246,60 @@ strong {
 }
 
 //HEADER WITH SOCIAL ICONS
+.header-mob-social {
+  position: absolute;
+  display: flex;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+	height: auto;
+	width: 100%;
+	padding: 5px 0;
+	visibility: hidden;
+}
+
+.social-mob-icons {
+  margin: auto;
+  ul {
+		display: inline-flex;
+		padding-inline-start: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+		list-style: none;
+  }
+  a {
+    color: $darkgrey;
+    font-size: 17px;
+    display: block;
+    background-color: rgba($logocolour, .7);
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    margin: 0 18px;
+    line-height: 38px; //centrilize icons with the same lh as height and width
+    border-radius: 10em;
+    transition: background-color .25s ease;
+    z-index: 0;
+  }
+  .icon-email {
+    &:active {
+      background-color: rgba($accent, .8);
+    }
+  }
+  .icon-linkedin {
+    &:active {
+      background-color: rgba($blue-faded, .8);
+    }
+  }
+  .icon-github {
+    &:active {
+      background-color: rgba($purple, .8);
+    }
+  }
+}
+
 .header-social {
   position: absolute;
   display: flex;
@@ -333,4 +365,3 @@ strong {
     font-size: 12px;
   }
 }
-

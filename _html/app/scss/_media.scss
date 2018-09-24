@@ -39,7 +39,7 @@
       .carousel-project-image {
         opacity: 1;
         img {
-          margin: 0;
+          margin: auto;
         }
       }
     }
@@ -58,6 +58,9 @@
     }
   }
   .carousel-project-composition {
+		.h3 {
+			font-size: 24px;
+		}
     .button {
       opacity: 1;
     }
